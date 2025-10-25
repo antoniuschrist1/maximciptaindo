@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PT Maxim Cipta Indo — Hospitality & Lifestyle</title>
+  <meta name="description" content="PT Maxim Cipta Indo — operator of hotels, cafes, coworking spaces and billiard lounges." />
+  <style>
+  :root{
+    --max-width:1100px;
+    --accent:#0b6b5a;
+    --muted:#6b6b6b;
+    --bg:#f9fbfa;
+    --card:#ffffff;
+    --radius:10px;
+    --gap:22px;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color-scheme: light;
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:#0e1720;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.45;
+  }
+
+  .container{
+    width:calc(100% - 32px);
+    max-width:var(--max-width);
+    margin:0 auto;
+  }
+
+  .site-header{
+    background:linear-gradient(90deg, rgba(11,107,90,0.04), transparent);
+    border-bottom:1px solid rgba(10,10,10,0.04);
+    position:sticky;
+    top:0;
+    z-index:40;
+  }
+  .header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:14px 0;
+  }
+
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo-placeholder{
+    width:56px;height:56px;border-radius:8px;background:linear-gradient(180deg,#0b6b5a,#0b5e4f);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:18px;
+  }
+  .brand-text h1{margin:0;font-size:18px}
+  .brand-text .tag{margin:0;color:var(--muted);font-size:13px}
+
+  .main-nav{display:flex;gap:18px}
+  .main-nav a{color:inherit;text-decoration:none;font-size:15px}
+  #nav-toggle{display:none;background:none;border:0;font-size:20px}
+
+  .hero{
+    padding:44px 0;
+  }
+  .hero-inner{display:flex;gap:30px;align-items:center}
+  .hero-copy{flex:1;max-width:640px}
+  .hero-copy h2{margin:0 0 12px;font-size:28px}
+  .hero-copy p{margin:0 0 18px;color:var(--muted)}
+  .btn{display:inline-block;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:600;border:1px solid transparent}
+  .btn.primary{background:var(--accent);color:white}
+  .btn.outline{background:transparent;border:1px solid rgba(11,107,90,0.12);color:var(--accent)}
+
+  .hero-media{width:420px;height:260px;flex-shrink:0}
+  .img-placeholder{
+    background:linear-gradient(135deg,#e9f6f2,#ffffff);
+    border-radius:12px;height:100%;display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700;border:1px solid rgba(10,10,10,0.03);
+  }
+
+  .section{padding:36px 0}
+  .section h3{margin-top:0;font-size:20px}
+
+  .facts{list-style:none;padding:0;color:var(--muted);display:flex;gap:18px;margin-top:12px;flex-wrap:wrap}
+  .facts li{font-size:14px}
+
+  .service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
+  .service{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(11,107,90,0.03)}
+  .service h4{margin:0 0 8px}
+  .service p{margin:0 0 12px;color:var(--muted)}
+  .learn{font-size:13px;color:var(--accent);text-decoration:none}
+
+  .portfolio-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+  .card{background:var(--card);padding:14px;border-radius:10px;text-align:left}
+  .card-img{height:96px;border-radius:8px;background:linear-gradient(180deg,#f2f7f5,#ffffff);display:flex;align-items:center;justify-content:center;color:var(--muted);margin-bottom:10px;font-weight:700}
+
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+  .contact-box{background:var(--card);padding:18px;border-radius:10px}
+  .form-box form label{display:block;margin-bottom:10px;font-size:13px}
+  .form-box input,.form-box textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(10,10,10,0.06);margin-top:6px}
+  .form-note{color:var(--muted);font-size:13px;margin-top:8px}
+
+  .site-footer{padding:18px 0;border-top:1px solid rgba(10,10,10,0.04);background:transparent}
+  .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+  .footer-nav a{margin-left:12px;text-decoration:none;color:var(--muted);font-size:14px}
+
+  @media (max-width:880px){
+    .hero-inner{flex-direction:column}
+    .hero-media{width:100%;height:220px}
+    .service-grid{grid-template-columns:1fr}
+    .portfolio-grid{grid-template-columns:repeat(2,1fr)}
+    .contact-grid{grid-template-columns:1fr}
+    .main-nav{display:none}
+    #nav-toggle{display:block}
+  }
+  @media (max-width:520px){
+    .portfolio-grid{grid-template-columns:1fr}
+  }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo-placeholder" aria-hidden="true">MX</div>
+        <div class="brand-text">
+          <h1>PT Maxim Cipta Indo</h1>
+          <p class="tag">Hotels · Cafés · Coworking · Billiard Lounges</p>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button id="nav-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h2>Building welcoming spaces across hospitality and lifestyle.</h2>
+          <p>We operate hotels, cozy cafés, modern coworking spaces, and premium billiard lounges — focused on consistent service and strong local presence.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="#services">Our Services</a>
+            <a class="btn outline" href="#contact">Get in touch</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <div class="img-placeholder">Image</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="container">
+        <h3>About PT Maxim Cipta Indo</h3>
+        <p>PT Maxim Cipta Indo is a multi-vertical company focused on hospitality and lifestyle businesses across Indonesia. Our pillars: hospitality excellence, neighborhood cafés, productive coworking environments, and social billiard spaces. We prioritize safety, hospitality, and local community engagement.</p>
+        <ul class="facts">
+          <li><strong>Headquarters:</strong> Medan, Indonesia</li>
+          <li><strong>Focus:</strong> Hotel operations, café concepts, coworking management, billiard lounges</li>
+          <li><strong>Vision:</strong> To be the trusted operator for local hospitality and leisure experiences</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="services" class="section services">
+      <div class="container">
+        <h3>Our Services</h3>
+        <div class="service-grid">
+          <article class="service">
+            <h4>Hotel Operations</h4>
+            <p>Full-service hotel management: guest operations, housekeeping, F&B, and events. Scalable models for boutique and midscale properties.</p>
+          </article>
+
+          <article class="service">
+            <h4>Cafés & F&B Concepts</h4>
+            <p>Design and run cafés with a focus on consistent menu, strong coffee program, and community building events.</p>
+          </article>
+
+          <article class="service">
+            <h4>Coworking & Workspaces</h4>
+            <p>Flexible desks, private rooms, and day-pass systems with reliable connectivity and hospitality-driven support.</p>
+          </article>
+
+          <article class="service">
+            <h4>Billiard Lounges</h4>
+            <p>Leisure-driven billiard lounges combining competitive play and comfortable social areas for groups and events.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="section portfolio">
+      <div class="container">
+        <h3>Portfolio & Projects</h3>
+        <div class="portfolio-grid">
+          <div class="card">
+            <div class="card-img">Hotel</div>
+            <h5>Boutique Hotel — Pilot</h5>
+            <p>20-room pilot with local design orientation and strong service training program.</p>
+          </div>
+          <div class="card">
+            <div class="card-img">Café</div>
+            <h5>Café Concept — Neighborhood</h5>
+            <p>Third-wave coffee, light menu, community events.</p>
+          </div>
+          <div class="card">
+            <div class="card-img">Cowork</div>
+            <h5>Coworking — Day Pass</h5>
+            <p>Quiet zones, private rooms, and fast internet for digital workers.</p>
+          </div>
+          <div class="card">
+            <div class="card-img">Billiard</div>
+            <h5>Billiard Lounge — Social</h5>
+            <p>Tables, small bar, tournaments and social events.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h3>Contact</h3>
+        <div class="contact-grid">
+          <div class="contact-box">
+            <h4>Head Office</h4>
+            <p>Medan, Indonesia</p>
+            <p><strong>Email:</strong> <a href="mailto:hello@maximciptaindo.com">hello@maximciptaindo.com</a></p>
+            <p><strong>Phone:</strong> +62 812-XXX-XXXX</p>
+          </div>
+
+          <div class="contact-box form-box">
+            <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+              <label>
+                <span>Name</span>
+                <input type="text" name="name" required />
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" name="_replyto" required />
+              </label>
+              <label>
+                <span>Message</span>
+                <textarea name="message" rows="4" required></textarea>
+              </label>
+              <button type="submit" class="btn primary">Send message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> PT Maxim Cipta Indo — All rights reserved.</p>
+        <nav class="footer-nav">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const navToggle = document.getElementById('nav-toggle');
+  navToggle && navToggle.addEventListener('click', () => {
+    const nav = document.querySelector('.main-nav');
+    if (!nav) return;
+    if (nav.style.display === 'flex') {
+      nav.style.display = '';
+    } else {
+      nav.style.display = 'flex';
+      nav.style.flexDirection = 'column';
+      nav.style.gap = '12px';
+      nav.style.position = 'absolute';
+      nav.style.right = '16px';
+      nav.style.top = '64px';
+      nav.style.background = 'white';
+      nav.style.padding = '12px';
+      nav.style.borderRadius = '8px';
+      nav.style.boxShadow = '0 6px 18px rgba(10,10,10,0.08)';
+    }
+  });
+
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      const btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.textContent = 'Send message';
+      }, 4000);
+    });
+  }
+  </script>
+</body>
+</html>
